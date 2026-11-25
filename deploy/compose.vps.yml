@@ -1,0 +1,14 @@
+# FactureLens on a small VPS, behind the shared Caddy gateway (see ../README.md, "Deploy").
+# The image is built on another machine and loaded with `docker load`.
+services:
+  facturelens:
+    image: facturelens:latest
+    restart: unless-stopped
+    env_file: .env
+    networks:
+      - web
+    mem_limit: 400m
+
+networks:
+  web:
+    external: true

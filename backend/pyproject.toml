@@ -1,0 +1,24 @@
+[project]
+name = "facturelens"
+version = "0.1.0"
+description = "Reads invoices and receipts from PDFs, photos and e-invoices into structured data."
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115",
+    "uvicorn>=0.32",
+    "python-multipart>=0.0.12",
+    "httpx>=0.28",
+    "pypdf>=5.1",
+    "pypdfium2>=4.30",
+    "pillow>=11.0",
+    "pillow-heif>=0.20",
+    "pytesseract>=0.3.13",
+    "defusedxml>=0.7",
+    "openpyxl>=3.1",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.3", "reportlab>=4.2"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
